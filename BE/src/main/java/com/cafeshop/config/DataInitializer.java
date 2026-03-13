@@ -26,7 +26,12 @@ public class DataInitializer {
                 return args -> {
                         log.info("🚀 Initializing Cafe Shop data...");
 
-                        // ============ CATEGORIES ============
+                        // Skip if data already exists (for PostgreSQL persistence)
+                        if (categoryRepo.count() > 0) {
+                                log.info("✅ Data already exists, skipping initialization.");
+                                return;
+                        }
+
                         Category catCafe = categoryRepo.save(Category.builder()
                                         .slug("cafe-rang-xay").name("Cà Phê Rang Xay").icon("☕").build());
                         Category catMut = categoryRepo.save(Category.builder()
