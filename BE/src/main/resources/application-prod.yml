@@ -1,0 +1,43 @@
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: cafe-shop-api
+
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/cafeshop}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+
+  h2:
+    console:
+      enabled: false
+
+app:
+  cors:
+    allowed-origins: ${CORS_ORIGINS:https://caffe-chuthang.vercel.app,https://*.vercel.app,http://localhost:5173,http://localhost:5175}
+    allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+    allowed-headers: "*"
+
+logging:
+  level:
+    com.cafeshop: INFO
+    org.springframework.web: WARN
