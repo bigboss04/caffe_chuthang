@@ -8,9 +8,9 @@ spring:
     name: cafe-shop-api
 
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/cafeshop}
-    username: ${DATABASE_USERNAME:postgres}
-    password: ${DATABASE_PASSWORD:postgres}
+    url: ${SPRING_DATASOURCE_URL:${DATABASE_URL:jdbc:postgresql://localhost:5432/cafeshop}}
+    username: ${SPRING_DATASOURCE_USERNAME:${DATABASE_USERNAME:postgres}}
+    password: ${SPRING_DATASOURCE_PASSWORD:${DATABASE_PASSWORD:postgres}}
     driver-class-name: org.postgresql.Driver
 
   jpa:
