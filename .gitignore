@@ -1,0 +1,32 @@
+# === Java / Maven ===
+BE/target/
+BE/.mvn/
+BE/*.jar
+BE/*.war
+
+# === Node / Frontend ===
+FE/node_modules/
+FE/dist/
+FE/.vite/
+
+# === IDE ===
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/
+.factorypath
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Env ===
+.env
+.env.local
+.env.*.local
+
+# === Logs ===
+*.log
+npm-debug.log*
