@@ -10,8 +10,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "products")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Product {
 
@@ -75,6 +77,11 @@ public class Product {
     @Column(name = "is_new")
     @Builder.Default
     private Boolean isNew = false;
+
+    @Builder.Default
+    private Boolean active = true;
+
+    private String sku;
 
     // Helper method to add variants
     public void addVariant(ProductVariant variant) {

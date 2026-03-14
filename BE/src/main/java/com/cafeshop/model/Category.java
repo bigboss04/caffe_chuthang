@@ -8,8 +8,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "categories")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Category {
 
@@ -24,9 +26,26 @@ public class Category {
     private String name;
 
     private String icon;
+    private String image;
+    private String description;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "parent_id")
+    @JsonIgnore
+    private Category parent;
+
+    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
+    @Builder.Default
+    private List<Category> children = new ArrayList<>();
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     @JsonIgnore
     @Builder.Default
     private List<Product> products = new ArrayList<>();
+
+    @Builder.Default
+    private Boolean active = true;
+
+    @Builder.Default
+    private Integer sortOrder = 0;
 }
