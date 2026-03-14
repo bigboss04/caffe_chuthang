@@ -85,9 +85,11 @@ export const CartProvider = ({ children }) => {
             payload: {
                 id: product.id,
                 name: product.name,
+                slug: product.slug,
                 image: product.image,
                 price: variant ? variant.price : product.price,
                 variantLabel: variant ? variant.label : product.unit,
+                categoryLabel: product.categoryLabel || (typeof product.category === 'object' ? product.category?.name : product.category) || '',
                 quantity,
             },
         });

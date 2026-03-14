@@ -88,13 +88,13 @@ export default function CartPage() {
                                         className="grid grid-cols-1 lg:grid-cols-12 gap-8 p-10 items-center group relative animate-in fade-in transition-colors hover:bg-cream/20"
                                     >
                                         <div className="col-span-1 lg:col-span-6 flex items-center gap-6">
-                                            <Link to={`/san-pham/${item.slug}`} className="w-24 h-24 lg:w-32 lg:h-32 rounded-[2.5rem] overflow-hidden bg-cream flex-shrink-0 shadow-premium group-hover:shadow-premium-lg group-hover:scale-105 transition-all">
+                                            <Link to={item.slug ? `/san-pham/${item.slug}` : '/san-pham'} className="w-24 h-24 lg:w-32 lg:h-32 rounded-[2.5rem] overflow-hidden bg-cream flex-shrink-0 shadow-premium group-hover:shadow-premium-lg group-hover:scale-105 transition-all">
                                                 <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                                             </Link>
                                             <div className="space-y-2">
                                                 <span className="text-[10px] font-black uppercase tracking-widest text-secondary block leading-none">{item.categoryLabel}</span>
                                                 <h3 className="text-xl lg:text-2xl font-serif font-black text-primary hover:text-secondary transition-colors leading-tight italic uppercase tracking-tight">
-                                                    <Link to={`/san-pham/${item.slug}`}>{item.name}</Link>
+                                                    <Link to={item.slug ? `/san-pham/${item.slug}` : '/san-pham'}>{item.name}</Link>
                                                 </h3>
                                                 <span className="inline-block bg-cream text-text-muted px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border border-secondary/5">
                                                     {item.variantLabel}

@@ -1,5 +1,5 @@
 import { useCart } from '../../context/CartContext';
-import { ShoppingBag, X, Trash2, Minus, Plus, ArrowRight, ShieldCheck, Truck } from 'lucide-react';
+import { ShoppingBag, X, Trash2, Minus, Plus, ArrowRight, ShieldCheck, Truck, Coffee } from 'lucide-react';
 import { formatPrice } from '../../utils/helpers';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -102,13 +102,13 @@ export default function CartDrawer() {
                                     key={`${item.id}-${item.variantLabel}`}
                                     className="group flex gap-5 animate-reveal border-b border-cream pb-6 last:border-0"
                                 >
-                                    <Link to={`/san-pham/${item.slug}`} className="w-24 h-24 rounded-2xl overflow-hidden bg-cream flex-shrink-0 shadow-premium group-hover:shadow-premium-lg transition-all">
+                                    <Link to={item.slug ? `/san-pham/${item.slug}` : '/san-pham'} className="w-24 h-24 rounded-2xl overflow-hidden bg-cream flex-shrink-0 shadow-premium group-hover:shadow-premium-lg transition-all">
                                         <img src={item.image} alt={item.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                     </Link>
                                     <div className="flex-1 space-y-2 relative">
                                         <div className="space-y-0.5">
                                             <h4 className="font-serif font-black text-primary line-clamp-1 group-hover:text-secondary transition-colors italic leading-tight uppercase tracking-tight">
-                                                <Link to={`/san-pham/${item.slug}`}>{item.name}</Link>
+                                                <Link to={item.slug ? `/san-pham/${item.slug}` : '/san-pham'}>{item.name}</Link>
                                             </h4>
                                             <span className="text-[10px] font-black uppercase tracking-widest text-text-muted bg-cream px-2 py-0.5 rounded-lg border border-secondary/5">
                                                 {item.variantLabel}
