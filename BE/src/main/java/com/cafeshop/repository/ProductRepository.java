@@ -21,15 +21,15 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByCategorySlug(String categorySlug);
 
     @Query("SELECT p FROM Product p WHERE " +
-           "(:categorySlug IS NULL OR p.category.slug = :categorySlug) AND " +
-           "(:search IS NULL OR LOWER(p.name) LIKE LOWER(CONCAT('%', :search, '%')) " +
-           "OR LOWER(p.description) LIKE LOWER(CONCAT('%', :search, '%')))")
+            "(:categorySlug IS NULL OR p.category.slug = :categorySlug) AND " +
+            "(:search IS NULL OR LOWER(p.name) LIKE LOWER(CONCAT('%', :search, '%')) " +
+            "OR LOWER(CAST(p.description AS string)) LIKE LOWER(CONCAT('%', :search, '%')))")
     Page<Product> findByFilters(
             @Param("categorySlug") String categorySlug,
             @Param("search") String search,
-            Pageable pageable
-    );
+            Pageable pageable);
 
     @Query("SELECT p FROM Product p WHERE p.category.slug = :categorySlug AND p.id <> :productId")
-    List<Product> findRelatedProducts(@Param("categorySlug") String categorySlug, @Param("productId") Long productId, Pageable pageable);
+    List<Product> findRelatedProducts(@Param("categorySlug") String categorySlug, @Param("productId") Long productId,
+            Pageable pageable);
 }

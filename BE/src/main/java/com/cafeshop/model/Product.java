@@ -55,7 +55,7 @@ public class Product {
     private String badge;
     private String badgeType;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "TEXT", length = 10000)
     private String description;
 
     @Embedded
