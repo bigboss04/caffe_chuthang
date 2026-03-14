@@ -23,7 +23,7 @@ export default function CategoriesSection({ categories, loading, onRefresh }) {
 
     const handleDelete = async (id) => {
         if (!confirm('Xóa danh mục này? Sản phẩm trong danh mục sẽ bị ảnh hưởng.')) return;
-        try { await adminService.deleteCategory(id); onRefresh(); } catch (e) { alert('Lỗi'); }
+        try { await adminService.deleteCategory(id); onRefresh(); } catch (e) { alert(e.response?.data?.message || 'Lỗi khi xóa danh mục'); }
     };
 
     if (loading) return <div className="admin-loading"><div className="admin-spinner" />Đang tải...</div>;

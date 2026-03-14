@@ -200,9 +200,10 @@ public class AdminController {
         public ResponseEntity<ApiResponse<Product>> toggleProduct(@PathVariable Long id) {
                 Product product = productRepository.findById(id)
                                 .orElseThrow(() -> new RuntimeException("Product not found"));
-                product.setFeatured(!product.getFeatured());
+                product.setActive(!Boolean.TRUE.equals(product.getActive()));
                 Product saved = productRepository.save(product);
-                return ResponseEntity.ok(ApiResponse.ok("Đã cập nhật trạng thái", saved));
+                String msg = saved.getActive() ? "Đã bật sản phẩm" : "Đã tắt sản phẩm";
+                return ResponseEntity.ok(ApiResponse.ok(msg, saved));
         }
 
         @PutMapping("/products/{id}/stock")
@@ -236,12 +237,32 @@ public class AdminController {
                 category.setName(updated.getName());
                 category.setSlug(updated.getSlug());
                 category.setIcon(updated.getIcon());
+                category.setDescription(updated.getDescription());
+                category.setImage(updated.getImage());
+                if (updated.getActive() != null)
+                        category.setActive(updated.getActive());
                 Category saved = categoryRepository.save(category);
                 return ResponseEntity.ok(ApiResponse.ok("Cập nhật danh mục thành công", saved));
         }
 
         @DeleteMapping("/categories/{id}")
         public ResponseEntity<ApiResponse<Void>> deleteCategory(@PathVariable Long id) {
+                Category category = categoryRepository.findById(id)
+                                .orElseThrow(() -> new RuntimeException("Danh mục không tồn tại"));
+                // Check if category has products
+                long productCount = productRepository.findAll().stream()
+                                .filter(p -> p.getCategory() != null && p.getCategory().getId().equals(id))
+                                .count();
+                if (productCount > 0) {
+                        throw new RuntimeException("Không thể xóa danh mục '" + category.getName()
+                                        + "' vì còn " + productCount
+                                        + " sản phẩm. Hãy chuyển sản phẩm sang danh mục khác trước.");
+                }
+                // Check if category has children
+                if (category.getChildren() != null && !category.getChildren().isEmpty()) {
+                        throw new RuntimeException("Không thể xóa danh mục '" + category.getName()
+                                        + "' vì còn danh mục con.");
+                }
                 categoryRepository.deleteById(id);
                 return ResponseEntity.ok(ApiResponse.ok("Đã xóa danh mục", null));
         }

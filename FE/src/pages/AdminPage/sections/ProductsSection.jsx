@@ -29,7 +29,7 @@ export default function ProductsSection({ products, categories, loading, onRefre
 
     const handleDelete = async (id) => {
         if (!confirm('Xóa sản phẩm này?')) return;
-        try { await adminService.deleteProduct(id); onRefresh(); } catch (e) { alert('Lỗi'); }
+        try { await adminService.deleteProduct(id); onRefresh(); } catch (e) { alert(e.response?.data?.message || 'Lỗi khi xóa sản phẩm'); }
     };
 
     const handleToggle = async (id) => {
