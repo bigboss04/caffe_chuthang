@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/*
+
+Sitemap: https://caffe-chuthang.vercel.app/sitemap.xml
+
+# Performance hints
+Host: caffe-chuthang.vercel.app

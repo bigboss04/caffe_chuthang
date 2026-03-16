@@ -17,19 +17,18 @@ import { PRODUCTS, PRODUCT_CATEGORIES, BLOG_POSTS, TESTIMONIALS } from '../../da
 import ProductCard from '../../components/ProductCard/ProductCard';
 import { formatDate } from '../../utils/helpers';
 import productService from '../../services/productService';
+import { useSEO } from '../../hooks/useSEO';
 
 export default function HomePage() {
     const [featuredProducts, setFeaturedProducts] = useState(PRODUCTS.slice(0, 4));
     const recentPosts = BLOG_POSTS.slice(0, 3);
 
-    // Floating animation elements
-    const [offsetY, setOffsetY] = useState(0);
-    const handleScroll = () => setOffsetY(window.pageYOffset);
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    // SEO
+    useSEO({
+        title: null, // Use default title for homepage
+        description: 'Nông Sản Phú Yên - Chuyên cà phê rang xay Arabica, Robusta nguyên chất. Mứt gừng đặc sản, hồ tiêu Phú Quốc. 100% tự nhiên. Giao toàn quốc.',
+        path: '/',
+    });
 
     // Fetch featured products from API
     useEffect(() => {
@@ -98,9 +97,13 @@ export default function HomePage() {
                         <div className="relative group perspective-1000">
                             <div className="relative z-10 overflow-hidden rounded-[3rem] shadow-2xl transform rotate-1 group-hover:rotate-0 transition-transform duration-700 aspect-[4/5] max-w-[480px] mx-auto bg-primary-light">
                                 <img
-                                    src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=1000"
-                                    alt="Premium Coffee"
+                                    src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=75&w=600"
+                                    alt="Cà phê rang xay nguyên chất Phú Yên - Premium Coffee"
                                     className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-110"
+                                    width={600}
+                                    height={750}
+                                    fetchpriority="high"
+                                    decoding="sync"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60" />
                             </div>
@@ -108,7 +111,6 @@ export default function HomePage() {
                             {/* Suspended Badges */}
                             <div
                                 className="absolute -top-8 -left-8 bg-white p-6 rounded-3xl shadow-premium-lg border border-secondary/10 flex items-center gap-4 animate-float z-20"
-                                style={{ transform: `translateY(${offsetY * 0.05}px)` }}
                             >
                                 <div className="w-12 h-12 bg-cream rounded-2xl flex items-center justify-center text-secondary">
                                     <TrendingUp size={24} />
@@ -121,7 +123,6 @@ export default function HomePage() {
 
                             <div
                                 className="absolute bottom-12 -right-8 bg-primary-light p-5 rounded-3xl shadow-2xl border border-white/5 flex flex-col gap-2 z-20 glass-dark"
-                                style={{ transform: `translateY(${-offsetY * 0.03}px)` }}
                             >
                                 <div className="flex items-center gap-3">
                                     <Star className="text-secondary fill-secondary" size={16} />
@@ -173,9 +174,13 @@ export default function HomePage() {
                                 style={{ animationDelay: `${idx * 150}ms` }}
                             >
                                 <img
-                                    src={cat.image || `https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800`}
+                                    src={cat.image || `https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&q=60&w=400`}
                                     alt={cat.name}
                                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-1"
+                                    loading="lazy"
+                                    decoding="async"
+                                    width={400}
+                                    height={420}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/20 to-transparent p-10 flex flex-col justify-end">
                                     <div className="w-14 h-14 bg-secondary/20 backdrop-blur-xl border border-white/20 rounded-2xl flex items-center justify-center text-3xl mb-6 transform transition-transform duration-500 group-hover:-translate-y-2">
@@ -262,9 +267,13 @@ export default function HomePage() {
                         <div className="flex-1 relative order-2 lg:order-1 max-w-[560px]">
                             <div className="relative z-10 rounded-[3.5rem] overflow-hidden shadow-premium-lg border-8 border-white aspect-square group">
                                 <img
-                                    src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1200"
-                                    alt="Farm story"
+                                    src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&q=60&w=600"
+                                    alt="Câu chuyện Nông Sản Phú Yên - Từ vườn đến ly cà phê"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    loading="lazy"
+                                    decoding="async"
+                                    width={600}
+                                    height={600}
                                 />
                                 <button className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-white/30 backdrop-blur-xl border border-white/50 rounded-full flex items-center justify-center text-white hover:scale-110 hover:bg-white transition-all group/play">
                                     <Play className="fill-white group-hover/play:fill-primary text-white group-hover/play:text-primary transition-colors ml-1" size={32} />

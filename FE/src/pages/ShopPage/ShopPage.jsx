@@ -17,6 +17,7 @@ import {
 import { PRODUCTS, PRODUCT_CATEGORIES } from '../../data/products';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import productService from '../../services/productService';
+import { useSEO } from '../../hooks/useSEO';
 
 const SORT_OPTIONS = [
     { id: 'default', name: 'Mặc định' },
@@ -41,6 +42,13 @@ export default function ShopPage() {
     const searchQuery = searchParams.get('search') || '';
     const sortBy = searchParams.get('sort') || 'default';
     const currentPage = parseInt(searchParams.get('page') || '0');
+
+    const categoryName = PRODUCT_CATEGORIES.find(c => c.id === activeCategory)?.name || 'Tất Cả';
+    useSEO({
+        title: `${categoryName} Sản Phẩm`,
+        description: `Mua ${categoryName.toLowerCase()} chất lượng cao tại Nông Sản Phú Yên. Cà phê rang xay, mứt gừng, hồ tiêu - 100% tự nhiên, giao hàng toàn quốc.`,
+        path: '/san-pham',
+    });
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 200);

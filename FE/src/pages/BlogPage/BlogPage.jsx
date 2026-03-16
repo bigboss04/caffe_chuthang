@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { BLOG_POSTS } from '../../data/products';
 import { formatDate } from '../../utils/helpers';
+import { useSEO } from '../../hooks/useSEO';
 
 const CATEGORIES = ['Tất cả', 'Cà phê', 'Nông sản', 'Sống sạch', 'Công thức', 'Tin tức'];
 
@@ -25,6 +26,12 @@ export default function BlogPage() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     const activeCategory = searchParams.get('category') || 'Tất cả';
+
+    useSEO({
+        title: 'Blog - Cẩm Nang Sống Sạch',
+        description: 'Chia sẻ câu chuyện về cà phê, nông sản sạch, mẹo sống xanh và bí quyết chọn đặc sản chất lượng từ Phú Yên.',
+        path: '/blog',
+    });
 
     useEffect(() => {
         const handleScroll = () => setIsScrolled(window.scrollY > 200);
