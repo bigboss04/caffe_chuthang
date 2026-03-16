@@ -2,9 +2,11 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import {
     LayoutDashboard, ShoppingCart, Package, Tag, Users, Gift, Star,
-    Warehouse, Truck, BarChart3, Layout, Settings, MessageSquare, Home
+    Warehouse, Truck, BarChart3, Layout, Settings, MessageSquare, Home, LogOut
 } from 'lucide-react';
 import adminService from '../../services/adminService';
+import adminAuthService from '../../services/adminAuthService';
+import AdminLoginPage from './AdminLoginPage';
 import DashboardSection from './sections/DashboardSection';
 import ProductsSection from './sections/ProductsSection';
 import CategoriesSection from './sections/CategoriesSection';
@@ -63,9 +65,38 @@ const SECTION_TITLES = {
 };
 
 export default function AdminPage() {
+    const [isAuthenticated, setIsAuthenticated] = useState(adminAuthService.isLoggedIn());
+    const [adminUser, setAdminUser] = useState(adminAuthService.getUser());
     const [active, setActive] = useState('dashboard');
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState({});
+
+    // Listen for forced logout events (e.g., 401 from API)
+    useEffect(() => {
+        const handleLogout = () => {
+            setIsAuthenticated(false);
+            setAdminUser(null);
+        };
+        window.addEventListener('admin-logout', handleLogout);
+        return () => window.removeEventListener('admin-logout', handleLogout);
+    }, []);
+
+    const handleLoginSuccess = (userData) => {
+        setIsAuthenticated(true);
+        setAdminUser(userData);
+    };
+
+    const handleLogout = () => {
+        adminAuthService.logout();
+        setIsAuthenticated(false);
+        setAdminUser(null);
+        setData({});
+    };
+
+    // Show login page if not authenticated
+    if (!isAuthenticated) {
+        return <AdminLoginPage onLoginSuccess={handleLoginSuccess} />;
+    }
 
     const fetchData = useCallback(async (section, params) => {
         setLoading(true);
@@ -150,7 +181,19 @@ export default function AdminPage() {
                     ))}
                 </nav>
                 <div className="admin-sidebar-footer">
+                    {adminUser && (
+                        <div className="admin-user-info">
+                            <div className="admin-user-avatar">{adminUser.fullName?.charAt(0) || 'A'}</div>
+                            <div className="admin-user-details">
+                                <span className="admin-user-name">{adminUser.fullName || adminUser.username}</span>
+                                <span className="admin-user-role">{adminUser.role}</span>
+                            </div>
+                        </div>
+                    )}
                     <Link to="/"><Home size={16} /> <span>Về trang chủ</span></Link>
+                    <button className="admin-logout-btn" onClick={handleLogout}>
+                        <LogOut size={16} /> <span>Đăng xuất</span>
+                    </button>
                 </div>
             </aside>
 

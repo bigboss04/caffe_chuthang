@@ -447,4 +447,28 @@ public class DataInitializer {
                         log.info("🎉 Cafe Shop data initialization complete!");
                 };
         }
+
+        /**
+         * Create default admin user if not exists.
+         * Default credentials: admin / admin123
+         */
+        @Bean
+        CommandLineRunner initAdminUser(AdminUserRepository adminUserRepo) {
+                return args -> {
+                        if (!adminUserRepo.existsByUsername("admin")) {
+                                String hashedPassword = com.cafeshop.controller.AdminAuthController
+                                                .hashPassword("admin123");
+                                adminUserRepo.save(AdminUser.builder()
+                                                .username("admin")
+                                                .password(hashedPassword)
+                                                .fullName("Quản Trị Viên")
+                                                .role("ADMIN")
+                                                .active(true)
+                                                .build());
+                                log.info("✅ Default admin user created (admin / admin123)");
+                        } else {
+                                log.info("✅ Admin user already exists.");
+                        }
+                };
+        }
 }

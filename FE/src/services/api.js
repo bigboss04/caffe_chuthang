@@ -10,16 +10,39 @@ const api = axios.create({
     },
 });
 
+// Request interceptor - attach admin token for admin API calls
+api.interceptors.request.use(
+    (config) => {
+        // Auto-attach token for admin endpoints (except auth)
+        if (config.url?.includes('/admin') && !config.url?.includes('/admin/auth')) {
+            const token = localStorage.getItem('admin_token');
+            if (token) {
+                config.headers.Authorization = `Bearer ${token}`;
+            }
+        }
+        return config;
+    },
+    (error) => Promise.reject(error)
+);
+
 // Response interceptor for error handling
 api.interceptors.response.use(
     (response) => response,
     (error) => {
         if (error.response) {
-            // Server responded with error
+            const { status } = error.response;
             const message = error.response.data?.message || 'Đã có lỗi xảy ra';
-            console.error(`[API Error] ${error.response.status}: ${message}`);
+
+            // If 401 on admin endpoint, clear token and redirect to login
+            if (status === 401 && window.location.pathname.startsWith('/admin')) {
+                localStorage.removeItem('admin_token');
+                localStorage.removeItem('admin_user');
+                // Trigger re-render by dispatching event
+                window.dispatchEvent(new Event('admin-logout'));
+            }
+
+            console.error(`[API Error] ${status}: ${message}`);
         } else if (error.request) {
-            // No response received
             console.error('[API Error] Không thể kết nối đến server');
         } else {
             console.error('[API Error]', error.message);
