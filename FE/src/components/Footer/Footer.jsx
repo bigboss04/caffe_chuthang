@@ -34,12 +34,12 @@ export default function Footer() {
                             </div>
                             <div className="flex flex-col leading-tight">
                                 <span className="font-serif text-2xl font-black tracking-tight">Nông Sản</span>
-                                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-secondary opacity-80">Phú Yên - Premium</span>
+                                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-secondary opacity-80">Đắk Nông - Premium</span>
                             </div>
                         </Link>
 
                         <p className="text-cream/50 text-base leading-relaxed font-medium">
-                            Sứ mệnh của chúng tôi là mang những tinh hoa nông sản sạch từ vùng cao nguyên Phú Yên đến tay người tiêu dùng Việt với chất lượng cao nhất và quy trình minh bạch.
+                            Sứ mệnh của chúng tôi là mang những tinh hoa nông sản sạch từ vùng cao nguyên Đắk Nông đến tay người tiêu dùng Việt với chất lượng cao nhất và quy trình minh bạch.
                         </p>
 
                         <div className="flex gap-4">
@@ -104,15 +104,14 @@ export default function Footer() {
                                 </div>
                                 <div>
                                     <div className="text-[10px] font-black uppercase text-cream/30 tracking-widest mb-1">Email liên hệ</div>
-                                    <div className="text-lg font-serif font-black text-cream tracking-tight italic">chaobuoi@nongsan.vn</div>
+                                    <div className="text-lg font-serif font-black text-cream tracking-tight italic">vandaiit2004@gmail.com</div>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4 group cursor-pointer">
                                 <MapPin size={24} className="text-secondary flex-shrink-0 mt-1" />
                                 <p className="text-cream/40 text-sm font-medium leading-relaxed group-hover:text-cream transition-colors">
-                                    Trụ sở: 123 Nguyễn Văn Linh, P. Phú Lâm, Tuy Hòa, Phú Yên <br />
-                                    Vùng nguyên liệu: Cầu Đất, Đà Lạt & Sông Hinh, Phú Yên
+                                    Xã Kiến Đức Tỉnh Lâm Đồng
                                 </p>
                             </div>
                         </div>
@@ -128,7 +127,7 @@ export default function Footer() {
                             <Truck size={28} />
                         </div>
                         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-cream/20 pt-2">
-                            © {currentYear} Nông Sản Phú Yên Premium. Bản quyền được bảo lưu.
+                            © {currentYear} Nông Sản Đắk Nông Premium. Bản quyền được bảo lưu.
                         </p>
                     </div>
 

@@ -37,8 +37,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${MAIL_USERNAME:tranvandainopro20022004@gmail.com}
-    password: ${MAIL_PASSWORD:}
+    username: tranvandainopro20022004@gmail.com
+    password: smxhilmnolggawhu
     properties:
       mail:
         smtp:
@@ -49,6 +49,9 @@ spring:
           connectiontimeout: 5000
           timeout: 5000
           writetimeout: 5000
+        transport:
+          protocol: smtp
+        debug: false
 
 # CORS Configuration
 app:
