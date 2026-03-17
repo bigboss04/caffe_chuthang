@@ -33,12 +33,31 @@ spring:
       write-dates-as-timestamps: false
     default-property-inclusion: non_null
 
+  # Gmail SMTP
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:tranvandainopro20022004@gmail.com}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enabled: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
 # CORS Configuration
 app:
   cors:
     allowed-origins: http://localhost:5173,http://localhost:5174,http://localhost:5175,http://localhost:3000
     allowed-methods: GET,POST,PUT,DELETE,OPTIONS
     allowed-headers: "*"
+  # Admin email to receive order notifications
+  admin-email: tranvandainopro20022004@gmail.com
 
 logging:
   level:

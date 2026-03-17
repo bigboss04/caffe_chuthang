@@ -27,6 +27,23 @@ spring:
       write-dates-as-timestamps: false
     default-property-inclusion: non_null
 
+  # Gmail SMTP
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:tranvandainopro20022004@gmail.com}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enabled: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
   h2:
     console:
       enabled: false
@@ -36,6 +53,7 @@ app:
     allowed-origins: ${CORS_ORIGINS:https://caffe-chuthang.vercel.app,https://*.vercel.app,http://localhost:5173,http://localhost:5175}
     allowed-methods: GET,POST,PUT,DELETE,OPTIONS
     allowed-headers: "*"
+  admin-email: ${ADMIN_EMAIL:tranvandainopro20022004@gmail.com}
 
 logging:
   level:
