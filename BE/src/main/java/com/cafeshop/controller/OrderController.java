@@ -27,7 +27,7 @@ public class OrderController {
     public ResponseEntity<ApiResponse<OrderResponse>> createOrder(@Valid @RequestBody OrderRequest request) {
         OrderResponse response = orderService.createOrder(request);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(ApiResponse.ok("Đặt hàng thành công! Cảm ơn bạn đã tin chọn Nông Sản Phú Yên.", response));
+                .body(ApiResponse.ok("Đặt hàng thành công! Cảm ơn bạn đã tin chọn Nông Sản Đắk Nông.", response));
     }
 
     /**
@@ -47,8 +47,7 @@ public class OrderController {
     @PutMapping("/{orderId}/status")
     public ResponseEntity<ApiResponse<Order>> updateOrderStatus(
             @PathVariable String orderId,
-            @RequestParam String status
-    ) {
+            @RequestParam String status) {
         Order updatedOrder = orderService.updateOrderStatus(orderId, status);
         return ResponseEntity.ok(ApiResponse.ok("Cập nhật trạng thái thành công", updatedOrder));
     }
