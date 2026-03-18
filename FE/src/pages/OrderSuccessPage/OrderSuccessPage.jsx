@@ -13,7 +13,7 @@ export default function OrderSuccessPage() {
                     </div>
                     <h1 className="success-title">Đặt Hàng Thành Công!</h1>
                     <p className="success-subtitle">
-                        Cảm ơn bạn đã tin tưởng Nông Sản Phú Yên 🌿<br />
+                        Cảm ơn bạn đã tin tưởng Nông Sản Đắk Nông 🌿<br />
                         Chúng tôi sẽ liên hệ xác nhận và giao hàng trong thời gian sớm nhất!
                     </p>
                     <div className="success-info">

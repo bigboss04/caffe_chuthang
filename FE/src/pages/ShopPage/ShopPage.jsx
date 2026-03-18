@@ -46,7 +46,7 @@ export default function ShopPage() {
     const categoryName = PRODUCT_CATEGORIES.find(c => c.id === activeCategory)?.name || 'Tất Cả';
     useSEO({
         title: `${categoryName} Sản Phẩm`,
-        description: `Mua ${categoryName.toLowerCase()} chất lượng cao tại Nông Sản Phú Yên. Cà phê rang xay, mứt gừng, hồ tiêu - 100% tự nhiên, giao hàng toàn quốc.`,
+        description: `Mua ${categoryName.toLowerCase()} chất lượng cao tại Nông Sản Đắk Nông. Cà phê rang xay, mứt gừng, hồ tiêu - 100% tự nhiên, giao hàng toàn quốc.`,
         path: '/san-pham',
     });
 
@@ -143,7 +143,7 @@ export default function ShopPage() {
                             Cửa Hàng <span className="text-secondary italic font-light lowercase">Nông Sản</span>
                         </h1>
                         <p className="text-cream/50 text-lg font-medium leading-relaxed max-w-2xl px-4">
-                            Tuyển tập trọn vẹn tinh hoa nông sản từ vùng cao nguyên Phú Yên, phục vụ trực tiếp từ nông trại đến tách cà phê của bạn.
+                            Tuyển tập trọn vẹn tinh hoa nông sản từ vùng cao nguyên Đắk Nông, phục vụ trực tiếp từ nông trại đến tách cà phê của bạn.
                         </p>
                     </div>
                 </div>

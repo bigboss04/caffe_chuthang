@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 
 const MILESTONES = [
-    { year: '2010', title: 'Khởi đầu từ nông trại nhỏ', desc: 'Diện tích 2 hecta tại Sông Hinh, Phú Yên.' },
+    { year: '2010', title: 'Khởi đầu từ nông trại nhỏ', desc: 'Diện tích 2 hecta tại Sông Hinh, Đắk Nông.' },
     { year: '2015', title: 'Mở rộng vùng nguyên liệu', desc: 'Hợp tác với bà con Cầu Đất, Đà Lạt cho Arabica.' },
     { year: '2018', title: 'Xưởng rang xay hiện đại', desc: 'Sử dụng công nghệ rang củi kết hợp máy công suất lớn.' },
     { year: '2022', title: 'Thương hiệu vươn xa', desc: 'Có mặt tại hơn 50 đại lý toàn quốc và bắt đầu xuất khẩu.' },
@@ -84,7 +84,7 @@ export default function AboutPage() {
                                 <span className="text-secondary font-black text-xs uppercase tracking-[0.3em]">Sứ mệnh & Tầm nhìn</span>
                                 <h2 className="text-4xl md:text-6xl font-serif font-black text-primary leading-tight lowercase first-letter:uppercase italic">Lan tỏa giá trị sạch từ tâm người nông dân</h2>
                                 <p className="text-lg text-text-secondary leading-relaxed font-bold opacity-80">
-                                    Nông Sản Phú Yên không chỉ là một thương hiệu, đó là lời hứa về sự trung thực trong từng hạt cà phê, từng miếng mứt gừng.
+                                    Nông Sản Đắk Nông không chỉ là một thương hiệu, đó là lời hứa về sự trung thực trong từng hạt cà phê, từng miếng mứt gừng.
                                 </p>
                             </div>
 
@@ -98,7 +98,7 @@ export default function AboutPage() {
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                                     <Globe className="text-secondary group-hover:rotate-12 transition-transform" size={40} />
                                     <h4 className="text-xl font-serif font-black italic uppercase leading-tight">Tầm nhìn</h4>
-                                    <p className="text-sm text-cream/40 leading-relaxed font-semibold">Trở thành biểu tượng của nông sản sạch Phú Yên trên bản đồ thế giới, vươn tầm các thị trường khó tính nhất.</p>
+                                    <p className="text-sm text-cream/40 leading-relaxed font-semibold">Trở thành biểu tượng của nông sản sạch Đắk Nông trên bản đồ thế giới, vươn tầm các thị trường khó tính nhất.</p>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +223,7 @@ export default function AboutPage() {
                     <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-16">
                         <div className="flex-1 space-y-6 text-center md:text-left">
                             <h2 className="text-4xl md:text-6xl text-cream font-serif font-black italic leading-tight uppercase">Đồng Hành <br /> Cùng <span className="text-secondary italic font-light lowercase">Phong Vị</span> Sạch</h2>
-                            <p className="text-cream/40 text-lg font-medium max-w-md">Khám phá dải sản phẩm nông sản sạch truyền thống Phú Yên.</p>
+                            <p className="text-cream/40 text-lg font-medium max-w-md">Khám phá dải sản phẩm nông sản sạch truyền thống Đắk Nông.</p>
                         </div>
                         <div className="flex items-center gap-6">
                             <Link to="/san-pham" className="btn btn-secondary px-12 py-5 text-sm uppercase tracking-widest font-black shadow-xl hover:scale-105 active:scale-95 transition-all">

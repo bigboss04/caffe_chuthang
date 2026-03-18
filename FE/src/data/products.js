@@ -1,9 +1,9 @@
-// Product data - Cà phê rang xay, Mứt gừng Phú Yên, Hồ tiêu
+// Product data - Cà phê rang xay, Mứt gừng Đắk Nông, Hồ tiêu
 
 export const PRODUCT_CATEGORIES = [
     { id: 'all', name: 'Tất cả', icon: '🌿' },
     { id: 'cafe-rang-xay', name: 'Cà Phê Rang Xay', icon: '☕' },
-    { id: 'mut-gung', name: 'Mứt Gừng Phú Yên', icon: '🫙' },
+    { id: 'mut-gung', name: 'Mứt Gừng Đắk Nông', icon: '🫙' },
     { id: 'ho-tieu', name: 'Hồ Tiêu', icon: '🌶️' },
     { id: 'ca-phe-nhan', name: 'Cà Phê Nhân Xanh', icon: '🌱' },
 ];
@@ -189,7 +189,7 @@ export const PRODUCTS = [
     // MỨT GỪNG PHÚ YÊN
     {
         id: 6,
-        name: 'Mứt Gừng Phú Yên Truyền Thống',
+        name: 'Mứt Gừng Đắk Nông Truyền Thống',
         slug: 'mut-gung-phu-yen-truyen-thong',
         category: 'mut-gung',
         image: 'https://images.unsplash.com/photo-1617634754236-2942d1bcf2e0?w=600&h=600&fit=crop',
@@ -206,9 +206,9 @@ export const PRODUCTS = [
         ],
         badge: 'Đặc sản',
         badgeType: 'organic',
-        description: 'Mứt gừng Phú Yên làm thủ công từ gừng tươi Sơn Hòa - Phú Yên nổi tiếng cay nồng. Chế biến theo công thức truyền thống, không phẩm màu, không chất bảo quản, đóng gói hũ thủy tinh sạch sẽ.',
+        description: 'Mứt gừng Đắk Nông làm thủ công từ gừng tươi Đắk Song - Đắk Nông nổi tiếng cay nồng. Chế biến theo công thức truyền thống, không phẩm màu, không chất bảo quản, đóng gói hũ thủy tinh sạch sẽ.',
         details: {
-            origin: 'Sơn Hòa, Phú Yên',
+            origin: 'Đắk Song, Đắk Nông',
             ingredients: 'Gừng tươi, đường mía, nước',
             noPreservatives: true,
             shelf: '6 tháng (bảo quản khô mát)',
@@ -222,7 +222,7 @@ export const PRODUCTS = [
     },
     {
         id: 7,
-        name: 'Mứt Gừng Dẻo Phú Yên',
+        name: 'Mứt Gừng Dẻo Đắk Nông',
         slug: 'mut-gung-deo-phu-yen',
         category: 'mut-gung',
         image: 'https://images.unsplash.com/photo-1592921870789-04563d55041c?w=600&h=600&fit=crop',
@@ -235,9 +235,9 @@ export const PRODUCTS = [
         ],
         badge: 'Mới',
         badgeType: 'new',
-        description: 'Mứt gừng dẻo nhuyễn, thái lát mỏng, vị cay vừa phải, ngọt thanh. Thích hợp dùng kèm trà gừng, nước chanh, hoặc ăn trực tiếp. Sản phẩm thuần tự nhiên từ gừng sạch Phú Yên.',
+        description: 'Mứt gừng dẻo nhuyễn, thái lát mỏng, vị cay vừa phải, ngọt thanh. Thích hợp dùng kèm trà gừng, nước chanh, hoặc ăn trực tiếp. Sản phẩm thuần tự nhiên từ gừng sạch Đắk Nông.',
         details: {
-            origin: 'Tuy An, Phú Yên',
+            origin: 'Đắk Mil, Đắk Nông',
             ingredients: 'Gừng tươi, đường mía',
             noPreservatives: true,
             shelf: '3 tháng (bảo quản tủ lạnh sau khi mở)',
@@ -251,7 +251,7 @@ export const PRODUCTS = [
     },
     {
         id: 8,
-        name: 'Trà Gừng Phú Yên Hòa Tan',
+        name: 'Trà Gừng Đắk Nông Hòa Tan',
         slug: 'tra-gung-hoa-tan-phu-yen',
         category: 'mut-gung',
         image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&h=600&fit=crop',
@@ -264,9 +264,9 @@ export const PRODUCTS = [
         ],
         badge: 'Giảm 17%',
         badgeType: 'sale',
-        description: 'Trà gừng hòa tan từ gừng Phú Yên xay mịn, kết hợp mật ong hoa cà phê. Tiện lợi pha nhanh, giữ ấm cơ thể, tốt cho tiêu hóa. Không chứa đường nhân tạo và phẩm màu.',
+        description: 'Trà gừng hòa tan từ gừng Đắk Nông xay mịn, kết hợp mật ong hoa cà phê. Tiện lợi pha nhanh, giữ ấm cơ thể, tốt cho tiêu hóa. Không chứa đường nhân tạo và phẩm màu.',
         details: {
-            origin: 'Phú Yên',
+            origin: 'Đắk Nông',
             ingredients: 'Gừng sấy, mật ong, quế, lá stevia',
             noPreservatives: true,
             shelf: '12 tháng (bảo quản khô, thoáng)',
@@ -428,7 +428,7 @@ export const TESTIMONIALS = [
         city: 'Hà Nội',
         avatar: 'https://i.pravatar.cc/100?img=47',
         rating: 5,
-        text: 'Mứt gừng Phú Yên ngon tuyệt! Mua về làm quà Tết cho gia đình ai cũng khen. Vị cay vừa phải, thơm mùi gừng tự nhiên, không quá ngọt. Đóng gói đẹp, giao hàng nhanh.',
+        text: 'Mứt gừng Đắk Nông ngon tuyệt! Mua về làm quà Tết cho gia đình ai cũng khen. Vị cay vừa phải, thơm mùi gừng tự nhiên, không quá ngọt. Đóng gói đẹp, giao hàng nhanh.',
     },
     {
         id: 3,
@@ -463,9 +463,9 @@ export const BLOG_POSTS = [
     },
     {
         id: 2,
-        title: 'Mứt gừng Phú Yên – Đặc sản xứ Nẫu trăm năm',
+        title: 'Mứt gừng Đắk Nông – Đặc sản Tây Nguyên trăm năm',
         slug: 'mut-gung-phu-yen-dac-san',
-        excerpt: 'Gừng Sơn Hòa Phú Yên nổi tiếng cay nồng nhất Việt Nam. Cùng khám phá hành trình từ củ gừng tươi đến mứt gừng thơm ngon đặc sản vùng đất này.',
+        excerpt: 'Gừng Đắk Song Đắk Nông nổi tiếng cay nồng nhất Việt Nam. Cùng khám phá hành trình từ củ gừng tươi đến mứt gừng thơm ngon đặc sản vùng đất này.',
         image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&h=400&fit=crop',
         category: 'Sản phẩm',
         date: '2026-01-22',

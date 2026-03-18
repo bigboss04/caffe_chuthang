@@ -25,7 +25,7 @@ const NAV_LINKS = [
         ],
     },
     {
-        label: 'Đặc Sản Phú Yên',
+        label: 'Đặc Sản Đắk Nông',
         href: '/san-pham?category=dac-san-phu-yen',
         children: [
             { label: 'Mứt Gừng Truyền Thống', href: '/san-pham?category=dac-san-phu-yen&type=mut-gung' },
@@ -204,7 +204,7 @@ export default function Header() {
                     </nav>
 
                     <div className="p-6 bg-cream m-4 rounded-3xl space-y-4">
-                        <p className="text-xs font-medium text-text-secondary text-center">Cùng chúng tôi lan tỏa phong vị cao nguyên Phú Yên</p>
+                        <p className="text-xs font-medium text-text-secondary text-center">Cùng chúng tôi lan tỏa phong vị cao nguyên Đắk Nông</p>
                         <Link to="/lien-he" className="btn btn-primary w-full py-3 text-sm">Hỗ trợ khách hàng</Link>
                     </div>
                 </div>

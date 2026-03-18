@@ -67,7 +67,7 @@ export default function BlogDetailPage() {
 
                         <div className="flex flex-wrap items-center justify-center gap-10 pt-10 border-t border-white/5 w-full max-w-3xl">
                             <div className="flex items-center gap-3 text-cream/40 text-[10px] font-black uppercase tracking-widest font-sans italic">
-                                <User size={16} className="text-secondary" /> {post.author || 'Mộc Phú Yên'}
+                                <User size={16} className="text-secondary" /> {post.author || 'Mộc Đắk Nông'}
                             </div>
                             <div className="flex items-center gap-3 text-cream/40 text-[10px] font-black uppercase tracking-widest font-sans italic">
                                 <Clock size={16} className="text-secondary" /> {post.readTime}
@@ -99,7 +99,7 @@ export default function BlogDetailPage() {
 
                             <h3 className="text-4xl font-serif font-black italic text-primary leading-tight lowercase first-letter:uppercase pt-10">Bản sắc trong từng hạt mầm cao nguyên</h3>
                             <p>
-                                Câu chuyện bắt đầu từ những cánh đồng cà phê bền bỉ dưới nắng gió miền Trung. Tại Phú Yên, chúng tôi chọn lọc những vùng nguyên liệu có độ cao tối ưu như Sông Hinh, nơi thổ nhưỡng đỏ bazan kiến tạo nên hương vị Robusta nồng nàn. Bên cạnh đó, vùng Cầu Đất (Lâm Đồng) mang đến những hạt Arabica thanh tao nhất.
+                                Câu chuyện bắt đầu từ những cánh đồng cà phê bền bỉ dưới nắng gió miền Trung. Tại Đắk Nông, chúng tôi chọn lọc những vùng nguyên liệu có độ cao tối ưu như Sông Hinh, nơi thổ nhưỡng đỏ bazan kiến tạo nên hương vị Robusta nồng nàn. Bên cạnh đó, vùng Cầu Đất (Lâm Đồng) mang đến những hạt Arabica thanh tao nhất.
                             </p>
 
                             <div className="grid grid-cols-2 gap-8 my-16">
@@ -113,7 +113,7 @@ export default function BlogDetailPage() {
 
                             <h3 className="text-4xl font-serif font-black italic text-primary leading-tight lowercase first-letter:uppercase pt-10">Quy trình rang xay chuẩn nghệ nhân</h3>
                             <p>
-                                Chúng tôi không tẩm ướp. Đó là tôn chỉ lớn nhất. Việc giữ nguyên hương vị mộc mọc đòi hỏi sự am hiểu sâu sắc về thời gian và nhiệt độ rang. Nghệ nhân rang xay của Nông Sản Phú Yên phải thức cùng lửa, thức cùng hương để nắm bắt đúng thời điểm "crack" đầu tiên - khi tinh hoa thực sự được giải phóng.
+                                Chúng tôi không tẩm ướp. Đó là tôn chỉ lớn nhất. Việc giữ nguyên hương vị mộc mọc đòi hỏi sự am hiểu sâu sắc về thời gian và nhiệt độ rang. Nghệ nhân rang xay của Nông Sản Đắk Nông phải thức cùng lửa, thức cùng hương để nắm bắt đúng thời điểm "crack" đầu tiên - khi tinh hoa thực sự được giải phóng.
                             </p>
 
                             <div className="p-12 bg-cream rounded-[3.5rem] border border-secondary/10 relative overflow-hidden group/quote my-16 shadow-inner">
@@ -152,7 +152,7 @@ export default function BlogDetailPage() {
                             </div>
                             <div className="flex-1 space-y-4 text-center md:text-left">
                                 <div className="space-y-1">
-                                    <h4 className="text-2xl font-serif font-black text-primary italic lowercase first-letter:uppercase">{post.author || 'Mộc Phú Yên'}</h4>
+                                    <h4 className="text-2xl font-serif font-black text-primary italic lowercase first-letter:uppercase">{post.author || 'Mộc Đắk Nông'}</h4>
                                     <div className="text-[10px] font-black uppercase tracking-widest text-secondary">Expert Editor & Agri Researcher</div>
                                 </div>
                                 <p className="text-sm text-text-secondary leading-relaxed font-bold opacity-60">Với hơn 10 năm nghiên cứu vùng nguyên liệu nông sản miền Trung, Mộc tin rằng sự thật luôn nằm ở chất lượng nguyên bản của từng hạt mầm.</p>
@@ -168,7 +168,7 @@ export default function BlogDetailPage() {
                         <div className="p-10 bg-white rounded-[3.5rem] shadow-premium border border-secondary/5 space-y-8 min-h-[400px]">
                             <h3 className="text-xl font-serif font-black text-primary italic uppercase tracking-tight border-b border-cream pb-4">Danh Mục</h3>
                             <div className="space-y-3">
-                                {['Cà phê sạch', 'Hành trình nông trại', 'Kỹ thuật pha chế', 'Sống xanh organic', 'Đặc sản Phú Yên'].map(cat => (
+                                {['Cà phê sạch', 'Hành trình nông trại', 'Kỹ thuật pha chế', 'Sống xanh organic', 'Đặc sản Đắk Nông'].map(cat => (
                                     <Link key={cat} to="/blog" className="flex items-center justify-between p-4 rounded-2xl bg-cream/50 text-text-muted hover:bg-primary hover:text-cream hover:shadow-xl transition-all font-bold text-xs uppercase tracking-widest group">
                                         <span>{cat}</span>
                                         <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-all translate-x-4 group-hover:translate-x-0" />

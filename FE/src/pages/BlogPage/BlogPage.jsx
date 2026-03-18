@@ -29,7 +29,7 @@ export default function BlogPage() {
 
     useSEO({
         title: 'Blog - Cẩm Nang Sống Sạch',
-        description: 'Chia sẻ câu chuyện về cà phê, nông sản sạch, mẹo sống xanh và bí quyết chọn đặc sản chất lượng từ Phú Yên.',
+        description: 'Chia sẻ câu chuyện về cà phê, nông sản sạch, mẹo sống xanh và bí quyết chọn đặc sản chất lượng từ Đắk Nông.',
         path: '/blog',
     });
 

@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
                     {/* Content */}
                     <article className="policy-content">
                         <p className="policy-intro">
-                            Chúng tôi – <strong>Nông Sản Phú Yên</strong> – cam kết bảo vệ quyền riêng tư của bạn.
+                            Chúng tôi – <strong>Nông Sản Đắk Nông</strong> – cam kết bảo vệ quyền riêng tư của bạn.
                             Chính sách này mô tả cách chúng tôi thu thập, sử dụng và bảo vệ thông tin cá nhân của bạn
                             khi bạn sử dụng website và dịch vụ của chúng tôi.
                         </p>
@@ -115,7 +115,7 @@ export default function PrivacyPolicyPage() {
                             <div className="policy-contact-info">
                                 <p>📧 Email: <a href="mailto:chaobuoi@nongsan.vn">chaobuoi@nongsan.vn</a></p>
                                 <p>📞 Điện thoại: <a href="tel:0912345678">0912 345 678</a></p>
-                                <p>📍 Địa chỉ: 123 Nguyễn Văn Linh, TP. Tuy Hòa, Phú Yên</p>
+                                <p>📍 Địa chỉ: 123 Nguyễn Văn Linh, TP. Gia Nghĩa, Đắk Nông</p>
                             </div>
                         </section>
 

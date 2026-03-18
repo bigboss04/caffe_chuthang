@@ -422,7 +422,7 @@ export default function CheckoutPage() {
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="p-6 bg-white rounded-3xl border border-cream space-y-2">
-                                    <div className="text-[10px] font-black uppercase text-secondary tracking-widest">Phú Yên / Nội tỉnh</div>
+                                    <div className="text-[10px] font-black uppercase text-secondary tracking-widest">Đắk Nông / Nội tỉnh</div>
                                     <div className="text-2xl font-serif font-black text-primary italic leading-none">24 Giờ</div>
                                 </div>
                                 <div className="p-6 bg-white rounded-3xl border border-cream space-y-2">

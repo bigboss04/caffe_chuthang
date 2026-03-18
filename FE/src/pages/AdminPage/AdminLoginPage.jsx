@@ -116,7 +116,7 @@ export default function AdminLoginPage({ onLoginSuccess }) {
                 </form>
 
                 <div className="admin-login-footer">
-                    <p>Nông Sản Phú Yên &copy; {new Date().getFullYear()}</p>
+                    <p>Nông Sản Đắk Nông &copy; {new Date().getFullYear()}</p>
                 </div>
             </div>
 

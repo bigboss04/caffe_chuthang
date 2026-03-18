@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-const DEFAULT_TITLE = 'Nông Sản Phú Yên - Cà Phê Rang Xay Nguyên Chất | Mứt Gừng | Hồ Tiêu';
-const DEFAULT_DESCRIPTION = 'Nông Sản Phú Yên - Chuyên cà phê rang xay Arabica, Robusta nguyên chất từ Đà Lạt. Mứt gừng đặc sản Phú Yên, hồ tiêu Phú Quốc. 100% tự nhiên, không phụ gia.';
+const DEFAULT_TITLE = 'Nông Sản Đắk Nông - Cà Phê Rang Xay Nguyên Chất | Mứt Gừng | Hồ Tiêu';
+const DEFAULT_DESCRIPTION = 'Nông Sản Đắk Nông - Chuyên cà phê rang xay Arabica, Robusta nguyên chất từ Đà Lạt. Mứt gừng đặc sản Đắk Nông, hồ tiêu Phú Quốc. 100% tự nhiên, không phụ gia.';
 const SITE_URL = 'https://caffe-chuthang.vercel.app';
 
 /**
@@ -14,7 +14,7 @@ const SITE_URL = 'https://caffe-chuthang.vercel.app';
  */
 export function useSEO({ title, description, path = '', image } = {}) {
     useEffect(() => {
-        const fullTitle = title ? `${title} | Nông Sản Phú Yên` : DEFAULT_TITLE;
+        const fullTitle = title ? `${title} | Nông Sản Đắk Nông` : DEFAULT_TITLE;
         const desc = description || DEFAULT_DESCRIPTION;
         const url = `${SITE_URL}${path}`;
         const ogImage = image || 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&h=630&fit=crop';

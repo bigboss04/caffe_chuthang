@@ -26,7 +26,7 @@ export default function HomePage() {
     // SEO
     useSEO({
         title: null, // Use default title for homepage
-        description: 'Nông Sản Phú Yên - Chuyên cà phê rang xay Arabica, Robusta nguyên chất. Mứt gừng đặc sản, hồ tiêu Phú Quốc. 100% tự nhiên. Giao toàn quốc.',
+        description: 'Nông Sản Đắk Nông - Chuyên cà phê rang xay Arabica, Robusta nguyên chất. Mứt gừng đặc sản, hồ tiêu Phú Quốc. 100% tự nhiên. Giao toàn quốc.',
         path: '/',
     });
 
@@ -66,7 +66,7 @@ export default function HomePage() {
                         </h1>
 
                         <p className="max-w-xl text-lg text-cream/60 font-medium leading-relaxed">
-                            Trải nghiệm hương vị nguyên bản từ những hạt cà phê Arabica Cầu Đất tinh tuyển và đặc sản Phú Yên 100% tự nhiên.
+                            Trải nghiệm hương vị nguyên bản từ những hạt cà phê Arabica Cầu Đất tinh tuyển và đặc sản Đắk Nông 100% tự nhiên.
                         </p>
 
                         <div className="flex flex-wrap gap-4 pt-4">
@@ -98,7 +98,7 @@ export default function HomePage() {
                             <div className="relative z-10 overflow-hidden rounded-[3rem] shadow-2xl transform rotate-1 group-hover:rotate-0 transition-transform duration-700 aspect-[4/5] max-w-[480px] mx-auto bg-primary-light">
                                 <img
                                     src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=75&w=600"
-                                    alt="Cà phê rang xay nguyên chất Phú Yên - Premium Coffee"
+                                    alt="Cà phê rang xay nguyên chất Đắk Nông - Premium Coffee"
                                     className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-110"
                                     width={600}
                                     height={750}
@@ -161,7 +161,7 @@ export default function HomePage() {
                             <h2 className="text-4xl md:text-5xl font-serif font-black">Khám Phá <br /> <span className="text-secondary/50 italic font-medium">Phong Vị</span> Việt</h2>
                         </div>
                         <p className="max-w-md text-text-secondary font-medium leading-relaxed">
-                            Tuyển tập những tinh hoa nông sản chất lượng cao nhất từ vùng nắng gió Phú Yên và cao nguyên Lâm Đồng.
+                            Tuyển tập những tinh hoa nông sản chất lượng cao nhất từ vùng nắng gió Đắk Nông và cao nguyên Lâm Đồng.
                         </p>
                     </div>
 
@@ -268,7 +268,7 @@ export default function HomePage() {
                             <div className="relative z-10 rounded-[3.5rem] overflow-hidden shadow-premium-lg border-8 border-white aspect-square group">
                                 <img
                                     src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&q=60&w=600"
-                                    alt="Câu chuyện Nông Sản Phú Yên - Từ vườn đến ly cà phê"
+                                    alt="Câu chuyện Nông Sản Đắk Nông - Từ vườn đến ly cà phê"
                                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     loading="lazy"
                                     decoding="async"
@@ -288,7 +288,7 @@ export default function HomePage() {
                                 <span className="text-secondary font-black text-xs uppercase tracking-[0.3em]">Hành Trình Của Chúng Tôi</span>
                                 <h2 className="text-5xl md:text-6xl font-serif font-black text-primary leading-[1.1]">Từ Vườn Nhỏ Đến <br /> <span className="text-secondary italic font-medium">Tách Cà Phê</span> Tinh Túy</h2>
                                 <p className="text-lg text-text-secondary leading-relaxed font-medium">
-                                    Nông Sản Phú Yên khởi nguồn từ đam mê mãnh liệt với nông sản miền Trung. Chúng tôi trực tiếp hợp tác cùng bà con nông dân, kiểm soát từ khâu chăm bón đến chế biến thành phẩm.
+                                    Nông Sản Đắk Nông khởi nguồn từ đam mê mãnh liệt với nông sản miền Trung. Chúng tôi trực tiếp hợp tác cùng bà con nông dân, kiểm soát từ khâu chăm bón đến chế biến thành phẩm.
                                 </p>
                             </div>
 

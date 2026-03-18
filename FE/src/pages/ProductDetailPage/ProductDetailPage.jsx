@@ -187,7 +187,7 @@ export default function ProductDetailPage() {
                             </div>
                             <h1 className="text-4xl md:text-5xl font-serif font-black text-primary leading-tight italic">{product.name}</h1>
                             <p className="text-text-secondary text-sm leading-relaxed font-medium line-clamp-3">
-                                {product.description || "Nông sản sạch Phú Yên với tiêu chuẩn quốc tế, mang đậm phong vị cao nguyên nắng gió. Sản phẩm nguyên chất 100%, không phụ gia bảo quản."}
+                                {product.description || "Nông sản sạch Đắk Nông với tiêu chuẩn quốc tế, mang đậm phong vị cao nguyên nắng gió. Sản phẩm nguyên chất 100%, không phụ gia bảo quản."}
                             </p>
                         </div>
 

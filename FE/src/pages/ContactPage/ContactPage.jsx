@@ -20,7 +20,7 @@ const CONTACT_INFO = [
     {
         icon: <MapPin size={22} />,
         title: 'Địa chỉ',
-        lines: ['123 Nguyễn Văn Linh,', 'TP. Tuy Hòa, Phú Yên'],
+        lines: ['123 Nguyễn Văn Linh,', 'TP. Gia Nghĩa, Đắk Nông'],
         action: { href: 'https://maps.google.com', label: 'Xem bản đồ', external: true },
     },
     {
@@ -225,7 +225,7 @@ export default function ContactPage() {
                     {/* Map */}
                     <div className="contact-map-wrap">
                         <h2 className="contact-form-title">Tìm Chúng Tôi</h2>
-                        <p className="contact-form-subtitle">Văn phòng chính tại TP. Tuy Hòa, Phú Yên</p>
+                        <p className="contact-form-subtitle">Văn phòng chính tại TP. Gia Nghĩa, Đắk Nông</p>
                         <div className="contact-map">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3906.0001820906376!2d109.31753207494003!3d13.095461987204116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170101dce15dc09%3A0x8bf34c6d18a46d1d!2zVGh1w6IgSMOyYSwgUGjDuiBZw6pu!5e0!3m2!1svi!2svn!4v1706000000000!5m2!1svi!2svn"
@@ -235,12 +235,12 @@ export default function ContactPage() {
                                 allowFullScreen=""
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="Bản đồ Nông Sản Phú Yên"
+                                title="Bản đồ Nông Sản Đắk Nông"
                             />
                         </div>
                         <div className="contact-map-info">
                             <MapPin size={16} />
-                            <span>123 Nguyễn Văn Linh, TP. Tuy Hòa, Phú Yên</span>
+                            <span>123 Nguyễn Văn Linh, TP. Gia Nghĩa, Đắk Nông</span>
                         </div>
                     </div>
                 </div>

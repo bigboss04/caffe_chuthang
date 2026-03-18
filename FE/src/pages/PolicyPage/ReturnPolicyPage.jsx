@@ -39,7 +39,7 @@ export default function ReturnPolicyPage() {
 
                         <section id="commit">
                             <h2>Cam Kết Của Chúng Tôi</h2>
-                            <p>Tại Nông Sản Phú Yên, chúng tôi cam kết cung cấp sản phẩm chất lượng cao, đúng mô tả. Nếu vì bất kỳ lý do nào bạn không hài lòng, chúng tôi sẵn sàng hỗ trợ:</p>
+                            <p>Tại Nông Sản Đắk Nông, chúng tôi cam kết cung cấp sản phẩm chất lượng cao, đúng mô tả. Nếu vì bất kỳ lý do nào bạn không hài lòng, chúng tôi sẵn sàng hỗ trợ:</p>
                             <div className="policy-cards-row">
                                 <div className="policy-mini-card">
                                     <span>📦</span>
