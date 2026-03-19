@@ -4,7 +4,7 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api';
 
 const api = axios.create({
     baseURL: API_URL,
-    timeout: 15000,
+    timeout: 120000, // 2 minutes - Render free tier can take up to 60s cold start
     headers: {
         'Content-Type': 'application/json',
     },
@@ -37,11 +37,12 @@ api.interceptors.response.use(
             if (status === 401 && window.location.pathname.startsWith('/admin')) {
                 localStorage.removeItem('admin_token');
                 localStorage.removeItem('admin_user');
-                // Trigger re-render by dispatching event
                 window.dispatchEvent(new Event('admin-logout'));
             }
 
             console.error(`[API Error] ${status}: ${message}`);
+        } else if (error.code === 'ECONNABORTED') {
+            console.error('[API Error] Request timeout - server đang khởi động, vui lòng thử lại');
         } else if (error.request) {
             console.error('[API Error] Không thể kết nối đến server');
         } else {
@@ -50,5 +51,17 @@ api.interceptors.response.use(
         return Promise.reject(error);
     }
 );
+
+// Wake up the backend server on app load (Render free tier cold start)
+const wakeUpServer = () => {
+    api.get('/products?size=1')
+        .then(() => console.log('✅ Server is awake'))
+        .catch(() => console.log('⏳ Server is waking up...'));
+};
+
+// Only ping in production
+if (import.meta.env.VITE_API_URL?.includes('render.com')) {
+    wakeUpServer();
+}
 
 export default api;

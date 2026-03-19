@@ -78,12 +78,18 @@ export default function CheckoutPage() {
 
         setIsSubmitting(true);
 
+        // Show loading toast for long requests (Render cold start)
+        const loadingToast = toast.loading('Đang xử lý đơn hàng... Vui lòng chờ trong giây lát ☕', {
+            duration: 120000,
+        });
+
         try {
             const response = await orderService.createOrder({
                 ...formData,
                 items,
             });
 
+            toast.dismiss(loadingToast);
             clearCart();
             toast.success(response.message || 'Đặt hàng thành công!', {
                 duration: 5000,
@@ -97,8 +103,16 @@ export default function CheckoutPage() {
                 }
             });
         } catch (error) {
-            const errMsg = error.response?.data?.message || 'Đã có lỗi xảy ra. Vui lòng thử lại.';
-            toast.error(errMsg);
+            toast.dismiss(loadingToast);
+            let errMsg;
+            if (error.code === 'ECONNABORTED') {
+                errMsg = 'Kết nối bị timeout. Server đang khởi động, vui lòng thử lại sau 30 giây.';
+            } else if (!error.response) {
+                errMsg = 'Không thể kết nối đến server. Vui lòng kiểm tra mạng và thử lại.';
+            } else {
+                errMsg = error.response?.data?.message || 'Đã có lỗi xảy ra. Vui lòng thử lại.';
+            }
+            toast.error(errMsg, { duration: 6000 });
         } finally {
             setIsSubmitting(false);
         }
